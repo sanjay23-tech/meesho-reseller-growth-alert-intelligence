@@ -146,3 +146,21 @@ meesho-reseller-growth-alert-intelligence/
 │
 ├── .gitignore
 └── README.md
+## Requirements
+
+- Python 3.x
+- SQLite
+- pytest for running the Part 2 test suite
+
+No external API service or API key is required.
+
+## Running the Project
+
+Run the commands below from the repository root.
+
+### Step 1 — Regenerate the Dataset
+
+Run:
+
+```powershell
+python data/generate_dataset.py
