@@ -1,3 +1,5 @@
+-- Query 1: Monthly revenue by category
+
 SELECT
     month,
     category,
@@ -8,6 +10,7 @@ GROUP BY month, category
 ORDER BY month, category;
 
 
+-- Query 2: Region-wise revenue and order count
 
 SELECT
     r.region,
@@ -20,7 +23,7 @@ GROUP BY r.region
 ORDER BY revenue DESC;
 
 
-
+-- Query 3: Top 5 resellers by total spend
 
 SELECT
     r.reseller_id,
@@ -35,7 +38,7 @@ ORDER BY total_spend DESC
 LIMIT 5;
 
 
-
+-- Query 4: Resellers who have never placed an order
 
 SELECT
     r.reseller_id,
@@ -46,8 +49,7 @@ LEFT JOIN orders o
 WHERE o.order_id IS NULL;
 
 
-
-
+-- Query 4b: COUNT(*) vs COUNT(order_id) for RS024
 
 SELECT
     r.reseller_id,
@@ -58,10 +60,6 @@ LEFT JOIN orders o
     ON r.reseller_id = o.reseller_id
 WHERE r.reseller_id = 'RS024'
 GROUP BY r.reseller_id;
-
-
-
-
 
 
 -- Query 5: June Delivered AOV
